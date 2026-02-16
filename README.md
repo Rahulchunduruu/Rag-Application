@@ -45,7 +45,7 @@ Rag/
 
 1. **Clone the repository**
 ```bash
-cd d:\intellipaat\Rag
+cd Rag-Application
 ```
 
 2. **Install dependencies**
@@ -58,8 +58,6 @@ pip install -r requirements.txt
 Create/edit `.env` file:
 ```
 open_ai_api=your_openai_api_key
-grok_api=your_grok_api_key
-hugging_face_api=your_huggingface_api_key
 ```
 
 4. **Add your documents**

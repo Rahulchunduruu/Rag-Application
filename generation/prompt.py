@@ -19,6 +19,9 @@ def get_prompt():
                           - Use **bold headings** to organize information
                           - If the answer cannot be found in the context, respond with "I don't know"
                           - Do not make up information
+
+                          Note:Convert all headings in this text to normal paragraph text. 
+                              Remove heading formatting and display the content as regular body text without any special styling or emphasis.
                           
                           Answer:
                           """)

@@ -43,16 +43,19 @@ def load_documents(data:str):
     documents=[]
 
     if pdf_loader:
-        documents.extend(pdf_loader.lazy_load())
+        documents.extend(pdf_loader.load())
     if text_loader:
-        documents.extend(text_loader.lazy_load())
+        documents.extend(text_loader.load())
     if Web_loader:
-        documents.extend(Web_loader.lazy_load())
-
+        documents.extend(Web_loader.load())
+    
     return documents
 
 if __name__=="__main__":
-    data=r'https://en.wikipedia.org/wiki/Telangana'
+    data=r'd:\intellipaat\Rag\data'
     documents=load_documents(data)
     for document in documents:
+        print("*"*100)
         print(document.metadata)
+        print(document.page_content[:2000])
+        print("*"*100)

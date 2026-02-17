@@ -1,5 +1,7 @@
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+from langchain_core.runnables import RunnableParallel,RunnableBranch,RunnableLambda
+
 
 
 def format_doc(docs):
@@ -15,7 +17,6 @@ def create_rag_pipeline(retriever, prompt, llm):
         "question":RunnablePassthrough()}
         | prompt
         | llm
-        | StrOutputParser()
         )
     
     return rag_chain

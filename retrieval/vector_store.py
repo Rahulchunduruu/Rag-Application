@@ -29,3 +29,8 @@ def load_vector_store(vector_store_path:str,embeddings):
                         )
     return vector_store
 
+def file_exists_in_db(vector_store, filename:str) -> bool:
+    """Check if a file exists in the vector database by searching metadata."""
+    docs = vector_store.docstore._dict.values()
+    return any(filename in doc.metadata.get('source', '') for doc in docs)
+

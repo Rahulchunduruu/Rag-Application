@@ -7,12 +7,20 @@ def get_prompt():
     """
     print("Creating prompt template...")
     prompt=PromptTemplate(input_variables=["context","question"],
-                          template="""Answer the question based on the context below.\n\n
-                          Context: {context}\n\n
-                          Question: {question}\n\n
-                          Answer:you must answer the question based on the context provided.amd if needed paraphrase the context to answer the question you are allowed to do it.
-                          Note:If the question cannot be answered based on the context, say I don't know
-                          and don't make up an answer.
+                          template="""Answer the question based on the context below.
+
+                          Context: {context}
+
+                          Question: {question}
+
+                          Instructions:
+                          - Answer based only on the provided context
+                          - Use **bold text** for important terms, names, and key points
+                          - Use **bold headings** to organize information
+                          - If the answer cannot be found in the context, respond with "I don't know"
+                          - Do not make up information
+
+                          Answer:
                           """)
 
     return prompt

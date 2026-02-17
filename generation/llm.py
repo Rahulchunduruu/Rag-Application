@@ -5,12 +5,13 @@ from typing import Literal,Union
 
 class user_input(BaseModel):
     Topic:  str =   Field(description="The topic to be discussed")
-    Summary:str =   Field(description="""Summary of the topic in 7 to 9 lines and if you don't know the answer, " \
+    context : str =   Field(description="The context to be used for generating the response excpeted between 10 to 12 lines")
+    Summary:str =   Field(description="""Summary of the topic in 3 to 4 lines lines and if you don't know the answer, " \
                         say you "Based on provided context i don't have information about {Topic}" don't write anything other that .""")
-    Conclusion:str= Field(description="Final conclusion on the topic")
+    Conclusion:str= Field(description="Final conclusion on the topic should be one line")
     
     def __str__(self):
-        return f"\nTopic: {self.Topic}\n\nSummary: {self.Summary}\n\nConclusion: {self.Conclusion}"
+        return f"\nTopic: {self.Topic} \n\ncontex: {self.context}\n\nSummary: {self.Summary} \n\nConclusion: {self.Conclusion}"
 
 
 def get_llm(temperature:float=0.7, max_tokens:int=3000):

@@ -5,7 +5,7 @@ from typing import Literal,Union
 
 class user_input(BaseModel):
     Topic:  str =   Field(description="The topic to be discussed")
-    context : str =   Field(description="The context to be used for generating the response excpeted between 10 to 12 lines")
+    context : str =   Field(description="The context to be used for generating the response excpeted between 10 to 12 lines and if you don't know about it just metioned i don't have information about {Topic} ")
     Summary:str =   Field(description="""Summary of the topic in 3 to 4 lines lines and if you don't know the answer, " \
                         say you "Based on provided context i don't have information about {Topic}" don't write anything other that .""")
     Conclusion:str= Field(description="Final conclusion on the topic should be one line")

@@ -14,12 +14,12 @@ def get_prompt():
                           Question: {question}
 
                           Instructions:
-                          - Answer based only on the provided context
+                          - Answer based only on the provided context and you are allowed to paraphase it but don't change the original meaning
                           - Use **bold text** for important terms, names, and key points
                           - Use **bold headings** to organize information
                           - If the answer cannot be found in the context, respond with "I don't know"
                           - Do not make up information
-
+                          
                           Answer:
                           """)
 

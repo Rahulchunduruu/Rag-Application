@@ -3,7 +3,7 @@ import tempfile
 import os
 from main import start_rag_system
 
-st.title("Smart Search & Ask")
+st.title("Rag-search-engine")
 # Initialize session state at the very top
 if "uploaded_files" not in st.session_state:
     st.session_state.uploaded_files = []
